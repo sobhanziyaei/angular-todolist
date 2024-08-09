@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { TaskNewEditComponent } from '../task-new-edit/task-new-edit.component';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  visible: boolean = false;
+  @ViewChild('TaskNewEdit') modalNewEditTask: TaskNewEditComponent | undefined;
 
   showDialog() {
-    this.visible = true;
+
+    this.modalNewEditTask?.open();
+
   }
 
 }

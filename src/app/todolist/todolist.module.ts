@@ -6,10 +6,12 @@ import { HomeComponent } from './home/home.component';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { TaskNewEditComponent } from './task-new-edit/task-new-edit.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    TaskNewEditComponent
   ],
   imports: [
     CommonModule,
