@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  visible: boolean = false;
+
+  showDialog() {
+    this.visible = true;
+  }
 
 }
