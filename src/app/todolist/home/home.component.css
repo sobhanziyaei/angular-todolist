@@ -1,0 +1,58 @@
+.text-red-500 {
+    color: #f56565;
+}
+
+.text-yellow-500 {
+    color: #ecc94b;
+}
+
+.text-green-500 {
+    color: #48bb78;
+}
+
+.icon-container {
+    display: flex;
+    gap: 15px;
+}
+
+.check-icon {
+    cursor: pointer;
+    color: #FFA000;
+}
+
+.trash-icon {
+    cursor: pointer;
+    color: red;
+}
+
+.edit-icon {
+    color: #2196F3;
+    cursor: pointer;
+}
+
+.done-icon {
+    color: #4CAF50;
+}
+
+.report-container {
+    display: flex;
+    gap: 50px;
+}
+
+.report-content {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.content {
+    font-size: 15px;
+    font-weight: bold;
+    color: #795548;
+}
+
+.title {
+    font-weight: bold;
+    color: #1E88E5;
+    font-size: 15px;
+}

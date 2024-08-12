@@ -7,6 +7,9 @@ import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { TaskNewEditComponent } from './task-new-edit/task-new-edit.component';
+import { FormsModule } from '@angular/forms';
+import { TableModule } from 'primeng/table';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { TaskNewEditComponent } from './task-new-edit/task-new-edit.component';
     InputTextModule,
     DialogModule,
     ButtonModule,
-    CardModule
+    CardModule,
+    FormsModule,
+    TableModule,
+    DropdownModule
   ]
 })
 export class TodolistModule { }

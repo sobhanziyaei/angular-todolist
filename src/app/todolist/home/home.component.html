@@ -4,7 +4,51 @@
             <p-button (onClick)="showDialog()" label="Add Task" [raised]="true" />
             <p-button label="Delete All" [raised]="true" severity="danger" />
         </div>
+
+        <div class="report-container mt-5">
+            <div class="report-content">
+                <span class="title">To do task count :</span>
+                <p class="content">{{todoTaskCount}}</p>
+            </div>
+
+            <div class="report-content">
+                <span class="title">Done task count :</span>
+                <p class="content">{{doneTaskCount}}</p>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <div class="card">
+                <p-table [value]="tasks" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Name</th>
+                            <th>Priority</th>
+                            <th>Actions</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-task>
+                        <tr>
+                            <td>{{ task.name }}</td>
+                            <td [ngClass]="getPriorityClass(task.priority)">{{ task.priority }}</td>
+                            <td>
+                                <div class="icon-container">
+                                    <i class="fas fa-edit edit-icon" title="Edit" (click)="editTask(task.id)"></i>
+                                    <i *ngIf="task.status == 'todo'" class="fas fa-clock check-icon" title="Pending"
+                                        (click)="doTask(task.id)"></i>
+                                    <i *ngIf="task.status == 'done'" class="fa-solid fa-circle-check done-icon"
+                                        title="Done"></i>
+                                    <i class="fas fa-trash-alt trash-icon" title="Delete"
+                                        (click)="deleteTask(task.id)"></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+
     </p-card>
 
-    <app-task-new-edit #TaskNewEdit></app-task-new-edit>
+    <app-task-new-edit #TaskNewEdit (taskSaved)="getData()"></app-task-new-edit>
 </div>
